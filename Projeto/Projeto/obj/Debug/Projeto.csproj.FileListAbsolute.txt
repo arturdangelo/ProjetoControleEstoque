@@ -1,0 +1,49 @@
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\Projeto.exe.config
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\Projeto.exe
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\Projeto.pdb
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.csproj.AssemblyReference.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.csproj.SuggestedBindingRedirects.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.Frm_Menu_Principal.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.Properties.Resources.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.csproj.GenerateResource.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.csproj.CoreCompileInputs.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.exe
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.pdb
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.Forms.Frm_Produto.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\Newtonsoft.Json.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.Text.Json.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.Text.Encodings.Web.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.ValueTuple.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.Numerics.Vectors.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.Buffers.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\bin\Debug\Newtonsoft.Json.xml
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.exe.config
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas\Projeto\Projeto\obj\Debug\Projeto.csproj.CopyComplete
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.csproj.AssemblyReference.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.csproj.SuggestedBindingRedirects.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.exe.config
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.Frm_Menu_Principal.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.Forms.Frm_Produto.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.Properties.Resources.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.csproj.GenerateResource.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.csproj.CoreCompileInputs.cache
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.exe
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.pdb
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Projeto.exe.config
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Projeto.exe
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Projeto.pdb
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Newtonsoft.Json.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.Text.Json.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.Text.Encodings.Web.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.ValueTuple.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.Numerics.Vectors.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.Buffers.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Newtonsoft.Json.xml
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.csproj.CopyComplete
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.Forms.Frm_ExibeProduto.resources
