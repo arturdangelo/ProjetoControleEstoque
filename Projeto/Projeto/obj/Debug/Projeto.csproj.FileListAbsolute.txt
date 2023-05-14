@@ -47,3 +47,4 @@ D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoqu
 D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\bin\Debug\Newtonsoft.Json.xml
 D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.csproj.CopyComplete
 D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.Forms.Frm_ExibeProduto.resources
+D:\Artur D'Angelo\Documents\Programação\Projetos\Sistema de Controle de Estoque e Vendas Teste\Projeto\Projeto\obj\Debug\Projeto.Forms.Frm_Venda.resources

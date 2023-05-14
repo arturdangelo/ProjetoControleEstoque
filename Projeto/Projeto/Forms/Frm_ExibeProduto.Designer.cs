@@ -32,6 +32,7 @@
             this.Btn_NovoProduto = new System.Windows.Forms.Button();
             this.Btn_Alterar = new System.Windows.Forms.Button();
             this.Btn_Atualizar = new System.Windows.Forms.Button();
+            this.Btn_Selecionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_ExibeProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,11 +80,21 @@
             this.Btn_Atualizar.UseVisualStyleBackColor = true;
             this.Btn_Atualizar.Click += new System.EventHandler(this.Btn_Atualizar_Click);
             // 
+            // Btn_Selecionar
+            // 
+            this.Btn_Selecionar.Location = new System.Drawing.Point(710, 82);
+            this.Btn_Selecionar.Name = "Btn_Selecionar";
+            this.Btn_Selecionar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Selecionar.TabIndex = 5;
+            this.Btn_Selecionar.Text = "Selecionar";
+            this.Btn_Selecionar.UseVisualStyleBackColor = true;
+            // 
             // Frm_ExibeProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 486);
+            this.Controls.Add(this.Btn_Selecionar);
             this.Controls.Add(this.Btn_Atualizar);
             this.Controls.Add(this.Btn_Alterar);
             this.Controls.Add(this.Btn_NovoProduto);
@@ -104,5 +115,6 @@
         private System.Windows.Forms.Button Btn_NovoProduto;
         private System.Windows.Forms.Button Btn_Alterar;
         private System.Windows.Forms.Button Btn_Atualizar;
+        private System.Windows.Forms.Button Btn_Selecionar;
     }
 }

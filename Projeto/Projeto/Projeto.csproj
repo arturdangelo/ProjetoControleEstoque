@@ -58,6 +58,8 @@
       <DependentUpon>CONTROLE_ESTOQUEDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\ProdutoController.cs" />
+    <Compile Include="Entidades\Item.cs" />
+    <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Forms\Frm_ExibeProduto.cs">
       <SubType>Form</SubType>
@@ -77,6 +79,12 @@
     <Compile Include="Forms\Frm_Produto.Designer.cs">
       <DependentUpon>Frm_Produto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Venda.Designer.cs">
+      <DependentUpon>Frm_Venda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Frm_ExibeProduto.resx">
@@ -87,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Produto.resx">
       <DependentUpon>Frm_Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Venda.resx">
+      <DependentUpon>Frm_Venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

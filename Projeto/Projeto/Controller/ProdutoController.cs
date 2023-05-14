@@ -2,6 +2,9 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using Projeto.Entidades;
+
 
 namespace Projeto.Controller
 {
@@ -56,7 +59,7 @@ namespace Projeto.Controller
             }
         }
 
-        public void ProdutoSelecionado(int CodSelecionado)
+        public void ProdutoSelecionado(int CodSelecionado, int num, DataGridView Dgv_ExibeProduto)
         {
             int aux = CodSelecionado;
             try
@@ -68,6 +71,7 @@ namespace Projeto.Controller
                 conexao.ExecutarComando(query);
                 using (SqlCommand sqlCommand = new SqlCommand(query, new SqlConnection(conexao.connectionString)))
                 {
+                    // MessageBox.Show("5");
                     sqlCommand.Connection.Open();
 
                     SqlDataReader reader = sqlCommand.ExecuteReader();
@@ -81,21 +85,26 @@ namespace Projeto.Controller
                         string situacaoProd = (string)reader["SITUACAO_PRODUTO"];
 
 
-                        Frm_Produto frm_Produto = new Frm_Produto(codigoProduto, nomeProduto, precoProduto, qtdProduto, situacaoProd);
-                        frm_Produto.Show();
+                        //MessageBox.Show("1");
+                        Produto produto = new Produto(codigoProduto, nomeProduto, precoProduto, qtdProduto, situacaoProd, Dgv_ExibeProduto, num);
+                        
+
                     }
                     else
                     {
+                        // MessageBox.Show("2");
                         throw new Exception("Produto não encontrado.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao pesquisar produto: " + ex.Message);
+                //MessageBox.Show("3");
+                MessageBox.Show("Erro ao pesquisar produto: " + ex.Message);
             }
             finally
             {
+                //MessageBox.Show("4");
                 this.conexao.FecharConexao();
             }
         }

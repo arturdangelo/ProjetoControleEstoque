@@ -57,13 +57,14 @@ namespace Projeto.Forms
         private void Btn_Alterar_Click(object sender, System.EventArgs e)
         {
 
+            
             if (Dgv_ExibeProduto.SelectedRows.Count > 0)
             {
                 DataGridViewCell cell = Dgv_ExibeProduto.SelectedRows[0].Cells[0];
                 string aux = cell.Value.ToString();
                 int codSelecionado = int.Parse(cell.Value.ToString());
                 ProdutoController produtoController = new ProdutoController();
-                produtoController.ProdutoSelecionado(codSelecionado);
+                produtoController.ProdutoSelecionado(codSelecionado, 0, null);
             }
         }
     }
