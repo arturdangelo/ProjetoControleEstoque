@@ -11,7 +11,7 @@ namespace Projeto.Model
 
         public Conexao()
         {
-            this.connectionString = "Data Source=DESKTOP-CAS1E6J;Initial Catalog=CONTROLE_ESTOQUE;User ID=sa;Password=fhtybhrubgikv";
+            this.connectionString = "Data Source=DESKTOP-CAS1E6J;Initial Catalog=CONTROLE_ESTOQUE;User ID=sa;Password=pass";
             this.connection = new SqlConnection(connectionString);
         }
 
