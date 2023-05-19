@@ -7,7 +7,7 @@ namespace Projeto.Forms
 {
     public partial class Frm_Venda : Form
     {
-        public double Quantidade { get; private set; }
+    
         public Frm_Venda()
         {
             InitializeComponent();
