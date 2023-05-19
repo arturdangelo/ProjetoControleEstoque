@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 
 
-namespace Projeto.Controller
+namespace Projeto.Model
 {
     public class Conexao
     {
@@ -11,7 +11,7 @@ namespace Projeto.Controller
 
         public Conexao()
         {
-            this.connectionString = "Data Source=DESKTOP-CAS1E6J;Initial Catalog=CONTROLE_ESTOQUE;User ID=sa;Password=pass";
+            this.connectionString = "Data Source=DESKTOP-CAS1E6J;Initial Catalog=CONTROLE_ESTOQUE;User ID=sa;Password=fhtybhrubgikv";
             this.connection = new SqlConnection(connectionString);
         }
 

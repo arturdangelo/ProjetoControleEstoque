@@ -1,5 +1,4 @@
 ﻿using Projeto.Controller;
-using Projeto.Entidades;
 using System.Windows.Forms;
 
 namespace Projeto.Forms
@@ -36,7 +35,7 @@ namespace Projeto.Forms
         private void Frm_ExibeProdutos_Load()
         {
             
-            Produto produto = new Produto(Dgv_ExibeProduto);
+            ProdutoController produto = new ProdutoController(Dgv_ExibeProduto);
             produto.ExibeProduto();
             //conexao.FecharConexao();
         }
@@ -49,7 +48,7 @@ namespace Projeto.Forms
 
         private void Btn_Atualizar_Click(object sender, System.EventArgs e)
         {
-            Produto produto = new Produto(Dgv_ExibeProduto);
+            ProdutoController produto = new ProdutoController(Dgv_ExibeProduto);
             produto.ExibeProduto();
             //conexao.FecharConexao();
         }
@@ -64,7 +63,7 @@ namespace Projeto.Forms
                 string aux = cell.Value.ToString();
                 int codSelecionado = int.Parse(cell.Value.ToString());
                 ProdutoController produtoController = new ProdutoController();
-                produtoController.ProdutoSelecionado(codSelecionado, 0, null);
+                ProdutoController p1 = new ProdutoController(codSelecionado, 0, null);
             }
         }
     }

@@ -1,20 +1,18 @@
-﻿
-
-namespace Projeto.Entidades
+﻿namespace Projeto.Controller
 {
-    class Item
+    class ItemController
     {
         public int CodigoItem { get; private set; }
-        public Produto Produto { get; private set; }
+        public ProdutoController Produto { get; private set; }
         public double Quantidade { get; private set; }
         public double Preco { get; private set; }
 
-        public Item()
+        public ItemController()
         {
 
         }
 
-        public Item (Produto produto, double quantidade, double preco)
+        public ItemController(ProdutoController produto, double quantidade, double preco)
         {
             Produto = produto;
             Quantidade = quantidade;

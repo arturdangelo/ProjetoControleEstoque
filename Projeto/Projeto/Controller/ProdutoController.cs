@@ -1,134 +1,232 @@
-﻿using Projeto.Forms;
-using System;
+﻿using Projeto.Model;
+using Projeto.Forms;
 using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
-using Projeto.Entidades;
-
+using System;
 
 namespace Projeto.Controller
 {
-    public class ProdutoController
+
+    class ProdutoController
     {
-        private Conexao conexao;
+        private DataTable dataTable;
+        private DataGridView Dgv_Produto;
+        public event Action<string> AtualizarLabelEvent;
+
+        public int CodProd { get; private set; }
+        public string NomeProd { get; private set; }
+        public double PrecoProd { get; private set; }
+        public double QtdProd { get; private set; }
+        public string SituacaoProd { get; private set; }
+        public Label Lbn_Resultado { get; private set; }
+        public TextBox Txt_Codigo { get; private set; }
+
+        public DataGridViewCellEventArgs E { get; private set; }
+
         public ProdutoController()
         {
-            this.conexao = new Conexao();
-        }
-        public void InserirProduto(int codProd, string nomeProd, double precoProd, double qtdProd, string situacaoProd)
-        {
-            try
-            {
-                this.conexao.AbrirConexao();
 
-                string comando = $"INSERT INTO TABELA_PRODUTO " +
-                    $"(CODIGO_PRODUTO, NOME_PRODUTO, PRECO_PRODUTO, QUANTIDADE_PRODUTO, SITUACAO_PRODUTO) VALUES " +
-                    $"({codProd}, '{nomeProd}', {precoProd}, {qtdProd}, '{situacaoProd}')";
-
-                this.conexao.ExecutarComando(comando);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao inserir produto: " + ex.Message);
-            }
-            finally
-            {
-                this.conexao.FecharConexao();
-            }
         }
 
-        public void AtualizarProduto(int codProd, string nomeProd, double precoProd, double qtdProd, string situacaoProd)
+        public ProdutoController (DataGridView dgv_Produto, DataGridViewCellEventArgs e, Label lbn_Resultado)
         {
-            try
-            {
-                this.conexao.AbrirConexao();
-
-                string comando = $"UPDATE TABELA_PRODUTO SET NOME_PRODUTO = '{nomeProd}', " +
-                    $" PRECO_PRODUTO = {precoProd}, QUANTIDADE_PRODUTO = {qtdProd}," +
-                    $" SITUACAO_PRODUTO = '{situacaoProd}' WHERE CODIGO_PRODUTO = {codProd}";
-
-                this.conexao.ExecutarComando(comando);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao inserir produto: " + ex.Message);
-            }
-            finally
-            {
-                this.conexao.FecharConexao();
-            }
+            Dgv_Produto = dgv_Produto;
+            E = e;
+            Lbn_Resultado = lbn_Resultado;
         }
 
-        public void ProdutoSelecionado(int CodSelecionado, int num, DataGridView Dgv_ExibeProduto)
+        //receber datagridview "Frm_ExibeProduto" e "Frm_Venda" 
+        public ProdutoController(DataGridView dgv_Produto)
         {
-            int aux = CodSelecionado;
-            try
+            Dgv_Produto = dgv_Produto;
+        }
+
+        //"Frm_ExibeProduto"
+        public ProdutoController(int codProd, int num, DataGridView dgv_ExibeProduto)
+        {
+            CodProd = codProd;
+            Dgv_Produto = dgv_ExibeProduto;
+            ProdutoModel produtoModel = new ProdutoModel();
+            produtoModel.ProdutoSelecionado(CodProd, num, Dgv_Produto, null, null);
+        }
+        public ProdutoController(int codProd, int num, DataGridView dgv_ExibeProduto, Label lbn_Resultado, TextBox txt_Codigo)
+        {
+            CodProd = codProd;
+            Dgv_Produto = dgv_ExibeProduto;
+            ProdutoModel produtoModel = new ProdutoModel();
+            Lbn_Resultado = lbn_Resultado;
+            Txt_Codigo = txt_Codigo;
+            produtoModel.ProdutoSelecionado(CodProd, num, Dgv_Produto, Txt_Codigo, Lbn_Resultado);
+        }
+        public ProdutoController(int codProd, string nomeProd, double precoProd, double qtdProd, string situacaoProd)
+        {
+            CodProd = codProd;
+            NomeProd = nomeProd;
+            PrecoProd = precoProd;
+            QtdProd = qtdProd;
+            SituacaoProd = situacaoProd;
+
+
+        }
+
+        //receber valores de "ProdutoModel"
+        public ProdutoController(int codProd, string nomeProd, double precoProd, double qtdProd, string situacaoProd, DataGridView dgv_ExibeProduto, int num, TextBox txt_Codigo, Label lbn_Resultado)
+        {
+            CodProd = codProd;
+            NomeProd = nomeProd;
+            PrecoProd = precoProd;
+            QtdProd = qtdProd;
+            SituacaoProd = situacaoProd;
+            Dgv_Produto = dgv_ExibeProduto;
+            Lbn_Resultado = lbn_Resultado;
+            Txt_Codigo = txt_Codigo;
+
+            if (num == 0)
             {
-                conexao.AbrirConexao();
-
-
-                string query = $"SELECT *FROM TABELA_PRODUTO WHERE CODIGO_PRODUTO = {aux}";
-                conexao.ExecutarComando(query);
-                using (SqlCommand sqlCommand = new SqlCommand(query, new SqlConnection(conexao.connectionString)))
+                Frm_Produto frm_Produto = new Frm_Produto(CodProd, NomeProd, PrecoProd, QtdProd, SituacaoProd);
+                frm_Produto.Show();
+            }
+            else if (num == 1)
+            {
+                if (situacaoProd == "Desativado")
                 {
-                    // MessageBox.Show("5");
-                    sqlCommand.Connection.Open();
+                    MessageBox.Show("O produto selecionado está desativado!");
+                }
 
-                    SqlDataReader reader = sqlCommand.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        int codigoProduto = (int)reader["CODIGO_PRODUTO"];
-                        string nomeProduto = (string)reader["NOME_PRODUTO"];
-                        double precoProduto = (double)reader["PRECO_PRODUTO"];
-                        double qtdProduto = (double)reader["QUANTIDADE_PRODUTO"];
-                        string situacaoProd = (string)reader["SITUACAO_PRODUTO"];
-
-
-                        //MessageBox.Show("1");
-                        Produto produto = new Produto(codigoProduto, nomeProduto, precoProduto, qtdProduto, situacaoProd, Dgv_ExibeProduto, num);
-                        
-
-                    }
-                    else
-                    {
-                        // MessageBox.Show("2");
-                        throw new Exception("Produto não encontrado.");
-                    }
+                else if (QtdProd == 0)
+                {
+                    MessageBox.Show("Produto com estoque zerado!");
+                }
+                else
+                {
+                    ProdutoSelecionadoVenda();
+                    AtualizaTotais();
+                    AtualizaResultado();
                 }
             }
-            catch (Exception ex)
+        }
+        public void AtualizarResultadoAltQtd()
+        {
+            if (Dgv_Produto.Rows.Count > 1)
             {
-                //MessageBox.Show("3");
-                MessageBox.Show("Erro ao pesquisar produto: " + ex.Message);
+                if (E.ColumnIndex == 2 || E.ColumnIndex == 3) // coluna "Quantidade" ou "Preço"
+                {
+                    double quantidade = Convert.ToDouble(Dgv_Produto.Rows[E.RowIndex].Cells[2].Value);
+                    double preco = Convert.ToDouble(Dgv_Produto.Rows[E.RowIndex].Cells[3].Value);
+                    double total = quantidade * preco;
+
+                    Dgv_Produto.Rows[E.RowIndex].Cells[4].Value = total;
+
+                    double total2 = 0;
+                    foreach (DataGridViewRow row in Dgv_Produto.Rows)
+                    {
+                        total2 += Convert.ToDouble(row.Cells[4].Value);
+                    }
+                    Lbn_Resultado.Text = "R$ " + total2.ToString("N2");
+                }
             }
-            finally
+        }
+        public void RemoverLinha()
+        {
+            if (Dgv_Produto.SelectedRows.Count > 0)
             {
-                //MessageBox.Show("4");
-                this.conexao.FecharConexao();
+                int index = Dgv_Produto.SelectedRows[0].Index;
+                Dgv_Produto.Rows.RemoveAt(index);
+
+                double total2 = 0;
+                foreach (DataGridViewRow row in Dgv_Produto.Rows)
+                {
+                    total2 += Convert.ToDouble(row.Cells[4].Value);
+                }
+                Lbn_Resultado.Text = "R$ " + total2.ToString("N2");
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione uma linha");
             }
         }
 
-        public DataTable ObterProdutos()
+        public void InserirProduto()
         {
-            DataTable dataTable = new DataTable();
-            try
+            ProdutoModel produtoController = new ProdutoModel();
+            produtoController.InserirProduto(CodProd, NomeProd, PrecoProd, QtdProd, SituacaoProd);
+        }
+        public void ProdutoSelecionadoVenda()
+        {
+            DataGridViewRow novaLinha = new DataGridViewRow();
+            novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = CodProd });
+            novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = NomeProd });
+            novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = 1 });
+            novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = PrecoProd });
+            Dgv_Produto.Rows.Add(novaLinha);
+        }
+
+        public void AtualizarProduto()
+        {
+            ProdutoModel produtoModel = new ProdutoModel();
+            produtoModel.AtualizarProduto(CodProd, NomeProd, PrecoProd, QtdProd, SituacaoProd);
+        }
+
+        //Atualizar total de cada produto
+        public void AtualizaTotais()
+        {
+            foreach (DataGridViewRow row in Dgv_Produto.Rows)
             {
-                conexao.AbrirConexao();
-                string query = "SELECT CODIGO_PRODUTO, NOME_PRODUTO, PRECO_PRODUTO," +
-                    "QUANTIDADE_PRODUTO, SITUACAO_PRODUTO FROM TABELA_PRODUTO";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conexao.connectionString);
-                adapter.Fill(dataTable);
+                if (row.IsNewRow) continue;
+
+                double quantidade = Convert.ToDouble(row.Cells[2].Value);
+                double preco = Convert.ToDouble(row.Cells[3].Value);
+                double total = quantidade * preco;
+                row.Cells[4].Value = total;
             }
-            catch (Exception ex)
+        }
+
+        public void AtualizaResultado()
+        {
+            double totalResultado = 0;
+            foreach (DataGridViewRow row in Dgv_Produto.Rows)
             {
-                throw new Exception("Erro ao obter produtos: " + ex.Message);
+                totalResultado += Convert.ToDouble(row.Cells[4].Value);
+
             }
-            finally
-            {
-                conexao.FecharConexao();
-            }
-            return dataTable;
+            Lbn_Resultado.Text = totalResultado.ToString();
+            Lbn_Resultado.Text = "R$ " + totalResultado.ToString("N2");
+            Txt_Codigo.Text = "";
+        }
+        public void ExibeProdutoVenda()
+        {
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+            columnHeaderStyle.BackColor = Color.LightBlue;
+            Dgv_Produto.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+            Dgv_Produto.Columns["CODIGO_PRODUTO"].Width = 50;
+            Dgv_Produto.Columns["NOME_PRODUTO"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Dgv_Produto.Columns["PRECO_PRODUTO"].Width = 50;
+            Dgv_Produto.Columns["QUANTIDADE_PRODUTO"].Width = 70;
+
+        }
+        public void ExibeProduto()
+        {
+            ProdutoModel pesquisaProdutoController = new ProdutoModel();
+            dataTable = pesquisaProdutoController.ObterProdutos();
+            Dgv_Produto.DataSource = dataTable;
+
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+            columnHeaderStyle.BackColor = Color.LightBlue;
+            Dgv_Produto.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+            Dgv_Produto.Columns["CODIGO_PRODUTO"].Width = 50;
+            Dgv_Produto.Columns["NOME_PRODUTO"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Dgv_Produto.Columns["PRECO_PRODUTO"].Width = 50;
+            Dgv_Produto.Columns["QUANTIDADE_PRODUTO"].Width = 70;
+            Dgv_Produto.Columns["SITUACAO_PRODUTO"].Width = 60;
+            Dgv_Produto.Columns["CODIGO_PRODUTO"].HeaderText = "Código";
+            Dgv_Produto.Columns["NOME_PRODUTO"].HeaderText = "Nome";
+            Dgv_Produto.Columns["PRECO_PRODUTO"].HeaderText = "Preço";
+            Dgv_Produto.Columns["QUANTIDADE_PRODUTO"].HeaderText = "Quantidade";
+            Dgv_Produto.Columns["SITUACAO_PRODUTO"].HeaderText = "Situação";
+            Dgv_Produto.Columns["CODIGO_PRODUTO"].Resizable = DataGridViewTriState.False;
+
+            Dgv_Produto.AllowUserToResizeRows = false;
         }
     }
 }

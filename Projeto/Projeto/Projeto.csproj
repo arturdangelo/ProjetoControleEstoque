@@ -51,52 +51,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Conexao.cs" />
+    <Compile Include="Model\Conexao.cs" />
     <Compile Include="CONTROLE_ESTOQUEDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CONTROLE_ESTOQUEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\ProdutoModel.cs" />
+    <Compile Include="Controller\ItemController.cs" />
+    <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
-    <Compile Include="Entidades\Item.cs" />
-    <Compile Include="Entidades\Pedido.cs" />
-    <Compile Include="Entidades\Produto.cs" />
-    <Compile Include="Forms\Frm_ExibeProduto.cs">
+    <Compile Include="Views\Frm_ExibeProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_ExibeProduto.Designer.cs">
+    <Compile Include="Views\Frm_ExibeProduto.Designer.cs">
       <DependentUpon>Frm_ExibeProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Menu_Principal.cs">
+    <Compile Include="Views\Frm_Menu_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Menu_Principal.Designer.cs">
+    <Compile Include="Views\Frm_Menu_Principal.Designer.cs">
       <DependentUpon>Frm_Menu_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Produto.cs">
+    <Compile Include="Views\Frm_Produto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Produto.Designer.cs">
+    <Compile Include="Views\Frm_Produto.Designer.cs">
       <DependentUpon>Frm_Produto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Venda.cs">
+    <Compile Include="Views\Frm_Venda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Venda.Designer.cs">
+    <Compile Include="Views\Frm_Venda.Designer.cs">
       <DependentUpon>Frm_Venda.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Frm_ExibeProduto.resx">
+    <EmbeddedResource Include="Views\Frm_ExibeProduto.resx">
       <DependentUpon>Frm_ExibeProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Menu_Principal.resx">
+    <EmbeddedResource Include="Views\Frm_Menu_Principal.resx">
       <DependentUpon>Frm_Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Produto.resx">
+    <EmbeddedResource Include="Views\Frm_Produto.resx">
       <DependentUpon>Frm_Produto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Venda.resx">
+    <EmbeddedResource Include="Views\Frm_Venda.resx">
       <DependentUpon>Frm_Venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

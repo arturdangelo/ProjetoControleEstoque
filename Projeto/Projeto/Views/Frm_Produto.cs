@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Projeto.Controller;
 using System.Globalization;
 using System.Data;
-using Projeto.Entidades;
+using Projeto.Controller;
 
 namespace Projeto.Forms
 {
@@ -66,7 +66,7 @@ namespace Projeto.Forms
                 double precoProd = double.Parse(Txt_Preco.Text.Replace(",","."));
                 double qtdProd = float.Parse(Txt_Quantidade.Text.Replace(",","."));
                 string situacaoProd = Cmb_Situacao.Text;
-                Produto produto = new Produto(codProd, nomeProd, precoProd, qtdProd, situacaoProd);
+                ProdutoController produto = new ProdutoController(codProd, nomeProd, precoProd, qtdProd, situacaoProd);
                 produto.InserirProduto();
                 MessageBox.Show("Produto cadastrado com sucesso!");   
             }
@@ -109,7 +109,7 @@ namespace Projeto.Forms
                 double precoProd = double.Parse(Txt_Preco.Text.Replace(",", "."));
                 double qtdProd = float.Parse(Txt_Quantidade.Text.Replace(",", "."));
                 string situacaoProd = Cmb_Situacao.Text;
-                Produto produto = new Produto(codProd, nomeProd, precoProd, qtdProd, situacaoProd);
+                ProdutoController produto = new ProdutoController(codProd, nomeProd, precoProd, qtdProd, situacaoProd);
                 produto.AtualizarProduto();
                 MessageBox.Show("Produto atualizado com sucesso!");
             }

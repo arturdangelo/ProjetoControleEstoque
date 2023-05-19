@@ -108,7 +108,6 @@
             this.Dgv_Venda.Size = new System.Drawing.Size(640, 282);
             this.Dgv_Venda.TabIndex = 5;
             this.Dgv_Venda.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Venda_CellValueChanged);
-            this.Dgv_Venda.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.Dgv_Venda_DataBindingComplete);
             // 
             // CODIGO_PRODUTO
             // 
@@ -163,9 +162,9 @@
             this.Lbn_Resultado.ForeColor = System.Drawing.Color.Red;
             this.Lbn_Resultado.Location = new System.Drawing.Point(696, 149);
             this.Lbn_Resultado.Name = "Lbn_Resultado";
-            this.Lbn_Resultado.Size = new System.Drawing.Size(118, 25);
+            this.Lbn_Resultado.Size = new System.Drawing.Size(94, 25);
             this.Lbn_Resultado.TabIndex = 7;
-            this.Lbn_Resultado.Text = "Resultado";
+            this.Lbn_Resultado.Text = "R$ 0,00";
             // 
             // Lbn_Venda
             // 
