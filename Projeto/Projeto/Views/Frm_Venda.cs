@@ -50,16 +50,6 @@ namespace Projeto.Forms
             produtoController.AtualizarResultadoAltQtd();
         }
 
-      /*  private void Dgv_Venda_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            Dgv_Venda.Columns[2].DefaultCellStyle.Format = "N2"; // Formatação da coluna "Quantidade"
-            Dgv_Venda.Columns[2].ValueType = typeof(double); // Tipo de dados da coluna "Quantidade"
-            Dgv_Venda.Columns[2].CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
-
-            // Associar o método "Dgv_Venda_CellValueChanged" ao evento "CellValueChanged" da coluna "Quantidade"
-            Dgv_Venda.Columns[2].DataGridView.CellValueChanged += Dgv_Venda_CellValueChanged;
-        } */
-
         private void Btn_Remover_Click(object sender, EventArgs e)
         {
             ProdutoController produtoController = new ProdutoController(Dgv_Venda, null, Lbn_Resultado);
